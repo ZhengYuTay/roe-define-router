@@ -15,7 +15,13 @@
 
 # roe-define-router
 
-<!-- description -->
+This package is an utility tool to help generate route definitions of [roe](https://github.com/kaelzhang/roe) or [egg](https://npmjs.org/package/egg)
+
+`roe-define-router` makes it quite easy to define
+
+- normal roe or egg routes
+- SSR pages routes (this features requires that `app.next` exists in which `app` is the instance of roe or egg, and `app.next` should be an instance of [`next server`](https://npmjs.org/package/next-server))
+- static files serving.
 
 ## Install
 
@@ -25,9 +31,33 @@ $ npm i roe-define-router
 
 ## Usage
 
+app/router.js
+
 ```js
-import roe_define_router from 'roe-define-router'
+const defineRouter = require('roe-define-router')
+
+module.exports = defineRouter({
+  routes: {
+    '/say-hello': 'say.hello'
+  },
+
+  pages: {
+    '/:lang': 'index'
+  },
+
+  static: {
+    '/static': 'static'
+  }
+}, {
+  static: {
+    root: '/path/to/project'
+  }
+}, app => {
+  // manually set other route definitions
+})
 ```
+
+## defineRouter()
 
 ## License
 
