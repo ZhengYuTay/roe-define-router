@@ -1,7 +1,7 @@
 {
   "name": "roe-define-router",
   "version": "1.0.0",
-  "description": "roe-define-router",
+  "description": "This package is an utility tool to help generate route definitions of roe or egg",
   "main": "src/index.js",
   "scripts": {
     "test": "nyc ava --timeout=10s",
@@ -17,7 +17,14 @@
     "url": "git://github.com/kaelzhang/roe-define-router.git"
   },
   "keywords": [
-    "roe-define-router"
+    "roe-define-router",
+    "egg-define-router",
+    "router",
+    "routes",
+    "framework",
+    "koa",
+    "egg",
+    "roe"
   ],
   "engines": {
     "node": ">= 6"
@@ -31,17 +38,19 @@
     "url": "https://github.com/kaelzhang/roe-define-router/issues"
   },
   "devDependencies": {
-    "ava": "^1.4.0",
+    "ava": "^1.4.1",
     "codecov": "^3.2.0",
     "eslint": "^5.15.3",
     "eslint-config-ostai": "^3.0.0",
     "eslint-plugin-import": "^2.16.0",
     "nyc": "^13.3.0",
-    "roe-scripts": "^1.0.0"
+    "roe-scripts": "^1.0.1"
   },
   "dependencies": {
+    "core-util-is": "^1.0.2",
     "egg-define-router": "^2.0.0",
     "egg-serve-static": "^2.0.0",
-    "egg-ssr-pages": "^1.0.2"
+    "egg-ssr-pages": "^1.0.5",
+    "err-object": "^4.1.0"
   }
 }

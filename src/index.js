@@ -1,6 +1,14 @@
 const ssr = require('egg-ssr-pages')
 const serve = require('egg-serve-static')
 const define = require('egg-define-router')
+const {
+  isObject,
+  isFunction
+} = require('core-util-is')
+
+const {
+  error
+} = require('./error')
 
 const defineRouter = (app, routes, config) => {
   if (routes.pages) {
@@ -16,7 +24,7 @@ const defineRouter = (app, routes, config) => {
   }
 }
 
-module.exports = (routes = {}, config = {}, extra) => {
+const define = (routes, config, extra) => {
   const apply = app => defineRouter(app, routes, config)
   return app => {
     if (extra.length < 2) {
@@ -25,6 +33,28 @@ module.exports = (routes = {}, config = {}, extra) => {
       return
     }
 
+    // Usage
+    // (app, apply) => {
+    //   app.router.get(pattern, someController)
+    //   apply(app)
+    // }
     extra(app, apply)
+  }
+}
+
+const NOOP = () => {}
+
+module.exports = (routes, config, extra) => {
+  if (!isObject(routes)) {
+    throw error('INVALID_ROUTES')
+  }
+
+  if (isFunction(config)) {
+    extra = config
+    config = {}
+  }
+
+  if (!isFunction) {
+
   }
 }

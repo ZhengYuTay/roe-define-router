@@ -36,7 +36,7 @@ app/router.js
 ```js
 const defineRouter = require('roe-define-router')
 
-module.exports = defineRouter({
+const routes = {
   routes: {
     '/say-hello': 'say.hello'
   },
@@ -48,16 +48,52 @@ module.exports = defineRouter({
   static: {
     '/static': 'static'
   }
-}, {
+}
+
+const config = {
   static: {
     root: '/path/to/project'
   }
-}, app => {
+}
+
+module.exports = defineRouter(routes, config, app => {
   // manually set other route definitions
 })
 ```
 
-## defineRouter()
+## defineRouter(routes, config?, extra?)
+
+- **routes.routes?** **config?.routes?** routes and options of [`egg-define-router`](https://github.com/kaelzhang/egg-define-router)
+- **routes.pages?** **routes?.pages?** pages and config of [`egg-ssr-pages`](https://github.com/kaelzhang/egg-ssr-pages)
+- **routes.static?** **routes?.static?** files and options of [`egg-serve-static`](https://github.com/kaelzhang/egg-serve-static)
+- **extra?** `Function(app, apply?)` an extra router function
+  - **app** `RoeApplication | EggApplication` the server instance
+  - **apply?** `Function(app)` method to apply `roe-define-router` to the application.
+
+Returns a roe/egg router function which accepts app as the only one parameter.
+
+## About `extra`
+
+If the `extra` function only contains one parameter, the `routes` will be applied to the application before invoking `extra`.
+
+```js
+module.exports = defineRouter(routes, config, app => {
+  // `routes` has already been applied
+})
+```
+
+If the function contains two parameters, then the second argument `apply` is the function to apply the `routes`, so that we need to manually invoke `apply(app)` to apply the routes what `roe-define-router` defined.
+
+```js
+module.exports = defineRouter(routes, config, (app, apply) => {
+  // do something with `app.router`
+
+  // Don't forget this line below:
+  apply(app)
+
+  // do something with `app.router`
+})
+```
 
 ## License
 
