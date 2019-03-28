@@ -10,6 +10,8 @@ const {
   error
 } = require('./error')
 
+const NOOP = () => {}
+
 const defineRouter = (app, routes, config) => {
   if (routes.pages) {
     ssr(routes.pages, config.pages)(app)
@@ -24,7 +26,11 @@ const defineRouter = (app, routes, config) => {
   }
 }
 
-const define = (routes, config, extra) => {
+module.exports = (routes, config = {}, extra = NOOP) => {
+  if (!isObject(routes)) {
+    throw error('INVALID_ROUTES')
+  }
+
   const apply = app => defineRouter(app, routes, config)
   return app => {
     if (extra.length < 2) {
@@ -39,22 +45,5 @@ const define = (routes, config, extra) => {
     //   apply(app)
     // }
     extra(app, apply)
-  }
-}
-
-const NOOP = () => {}
-
-module.exports = (routes, config, extra) => {
-  if (!isObject(routes)) {
-    throw error('INVALID_ROUTES')
-  }
-
-  if (isFunction(config)) {
-    extra = config
-    config = {}
-  }
-
-  if (!isFunction) {
-
   }
 }

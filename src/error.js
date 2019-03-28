@@ -2,8 +2,10 @@ const {Errors} = require('err-object')
 
 const {error, E} = new Errors()
 
-E('INVALID_ROUTES', 'routes must be an object')
+const INVALID_ROUTES = 'routes must be an object'
+E('INVALID_ROUTES', INVALID_ROUTES)
 
 module.exports = {
-  error
+  error,
+  INVALID_ROUTES
 }

@@ -1,5 +1,7 @@
 # babel dist
 /lib
+.next
+dest
 
 # Numerous always-ignore extensions
 *.bak

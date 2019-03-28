@@ -4,8 +4,7 @@
   "description": "This package is an utility tool to help generate route definitions of roe or egg",
   "main": "src/index.js",
   "scripts": {
-    "test": "nyc ava --timeout=10s",
-    "test-no-report": "NODE_DEBUG=roe-define-router nyc ava --timeout=10s --verbose",
+    "test": "NODE_DEBUG=roe-define-router nyc ava --timeout=10s --verbose test/*.test.js",
     "lint": "eslint .",
     "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
@@ -38,13 +37,24 @@
     "url": "https://github.com/kaelzhang/roe-define-router/issues"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/runtime-corejs2": "^7.4.2",
     "ava": "^1.4.1",
     "codecov": "^3.2.0",
+    "egg-redis": "^2.3.0",
+    "egg-ssr-pages": "^1.0.5",
     "eslint": "^5.15.3",
     "eslint-config-ostai": "^3.0.0",
     "eslint-plugin-import": "^2.16.0",
+    "fs-extra": "^7.0.1",
+    "koa-cookie": "^1.0.0",
+    "next-server": "^8.0.3",
     "nyc": "^13.3.0",
-    "roe-scripts": "^1.0.1"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-is": "^16.8.6",
+    "roe": "^1.1.2",
+    "roe-mock": "^1.0.2"
   },
   "dependencies": {
     "core-util-is": "^1.0.2",
