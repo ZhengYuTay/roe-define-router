@@ -1,6 +1,6 @@
 {
   "name": "roe-define-router",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This package is an utility tool to help generate route definitions of roe or egg",
   "main": "src/index.js",
   "scripts": {
@@ -37,30 +37,30 @@
     "url": "https://github.com/kaelzhang/roe-define-router/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@babel/runtime-corejs2": "^7.4.2",
+    "@babel/core": "^7.4.4",
+    "@babel/runtime-corejs2": "^7.4.4",
     "ava": "^1.4.1",
-    "codecov": "^3.2.0",
-    "egg-redis": "^2.3.0",
-    "egg-ssr-pages": "^1.0.5",
-    "eslint": "^5.15.3",
+    "codecov": "^3.5.0",
+    "egg-redis": "^2.3.2",
+    "egg-ssr-pages": "^1.1.1",
+    "eslint": "^5.16.0",
     "eslint-config-ostai": "^3.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "fs-extra": "^7.0.1",
+    "eslint-plugin-import": "^2.17.2",
+    "fs-extra": "^8.0.1",
     "koa-cookie": "^1.0.0",
-    "next-server": "^8.0.3",
-    "nyc": "^13.3.0",
+    "next-server": "^8.1.0",
+    "nyc": "^14.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-is": "^16.8.6",
-    "roe": "^1.1.2",
+    "roe": "^2.0.0",
     "roe-mock": "^1.0.2"
   },
   "dependencies": {
     "core-util-is": "^1.0.2",
     "egg-define-router": "^2.0.0",
-    "egg-serve-static": "^2.0.0",
-    "egg-ssr-pages": "^1.0.5",
-    "err-object": "^4.1.0"
+    "egg-serve-static": "^2.1.1",
+    "egg-ssr-pages": "^1.1.1",
+    "err-object": "^4.3.1"
   }
 }
