@@ -1,6 +1,6 @@
 {
   "name": "roe-define-router",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "This package is an utility tool to help generate route definitions of roe or egg",
   "main": "src/index.js",
   "scripts": {
@@ -60,7 +60,7 @@
     "core-util-is": "^1.0.2",
     "egg-define-router": "^2.0.0",
     "egg-serve-static": "^2.1.1",
-    "egg-ssr-pages": "^1.2.0",
+    "egg-ssr-pages": "^1.3.0",
     "err-object": "^4.3.1"
   }
 }
