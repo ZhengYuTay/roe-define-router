@@ -1,6 +1,6 @@
 {
   "name": "roe-define-router",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This package is an utility tool to help generate route definitions of roe or egg",
   "main": "src/index.js",
   "scripts": {
@@ -42,19 +42,19 @@
     "ava": "^1.4.1",
     "codecov": "^3.5.0",
     "egg-redis": "^2.3.2",
-    "egg-ssr-pages": "^1.1.1",
     "eslint": "^5.16.0",
     "eslint-config-ostai": "^3.0.0",
     "eslint-plugin-import": "^2.17.2",
     "fs-extra": "^8.0.1",
     "koa-cookie": "^1.0.0",
+    "next": "^8.1.0",
     "next-server": "^8.1.0",
     "nyc": "^14.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-is": "^16.8.6",
     "roe": "^2.0.0",
-    "roe-mock": "^1.0.2"
+    "roe-mock": "^2.0.0"
   },
   "dependencies": {
     "core-util-is": "^1.0.2",
