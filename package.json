@@ -1,12 +1,16 @@
 {
   "name": "roe-define-router",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "This package is an utility tool to help generate route definitions of roe or egg",
   "main": "src/index.js",
   "scripts": {
     "test": "NODE_DEBUG=roe-define-router nyc ava --timeout=10s --verbose test/*.test.js",
     "lint": "eslint .",
-    "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+    "test:dev": "npm run test && npm run report:dev",
+    "test:only": "NODE_DEBUG=caviar nyc ava --timeout=30s --verbose",
+    "posttest": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "report:dev": "nyc report --reporter=html && npm run report:open",
+    "report:open": "open coverage/index.html"
   },
   "files": [
     "src/"
@@ -37,15 +41,15 @@
     "url": "https://github.com/kaelzhang/roe-define-router/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/runtime-corejs2": "^7.4.4",
-    "ava": "^1.4.1",
+    "@babel/core": "^7.4.5",
+    "@babel/runtime-corejs2": "^7.4.5",
+    "ava": "^2.1.0",
     "codecov": "^3.5.0",
-    "egg-redis": "^2.3.2",
-    "eslint": "^5.16.0",
+    "egg-redis": "^2.4.0",
+    "eslint": "^6.0.1",
     "eslint-config-ostai": "^3.0.0",
-    "eslint-plugin-import": "^2.17.2",
-    "fs-extra": "^8.0.1",
+    "eslint-plugin-import": "^2.18.0",
+    "fs-extra": "^8.1.0",
     "koa-cookie": "^1.0.0",
     "next": "^8.1.0",
     "next-server": "^8.1.0",
@@ -53,14 +57,15 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-is": "^16.8.6",
-    "roe": "^2.0.0",
-    "roe-mock": "^2.0.0"
+    "roe": "^2.1.1",
+    "roe-mock": "^2.0.4",
+    "test-fixture": "^2.4.0"
   },
   "dependencies": {
     "core-util-is": "^1.0.2",
-    "egg-define-router": "^2.0.0",
-    "egg-serve-static": "^2.1.1",
-    "egg-ssr-pages": "^1.3.0",
-    "err-object": "^4.3.1"
+    "egg-define-router": "^2.0.1",
+    "egg-serve-static": "^2.1.2",
+    "egg-ssr-pages": "^1.3.2",
+    "err-object": "^5.1.2"
   }
 }

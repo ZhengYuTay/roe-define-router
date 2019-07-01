@@ -2,8 +2,7 @@ const ssr = require('egg-ssr-pages')
 const serve = require('egg-serve-static')
 const define = require('egg-define-router')
 const {
-  isObject,
-  isFunction
+  isObject
 } = require('core-util-is')
 
 const {

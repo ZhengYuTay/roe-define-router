@@ -1,17 +1,21 @@
 const path = require('path')
 const define = require('../../..')
 
+const two = process.env.ROE_DEFINE_ROUTER_PARAMETERS === 'two'
+
 const routes = {
   routes: {
     '/hello': 'say.hello'
   },
 
-  pages: {
-    '/home/:lang': 'index'
-  },
-
   static: {
     '/js': 'static'
+  }
+}
+
+if (two) {
+  routes.pages = {
+    '/home/:lang': 'index'
   }
 }
 
@@ -21,7 +25,7 @@ const config = {
   }
 }
 
-module.exports = process.env.ROE_DEFINE_ROUTER_PARAMETERS === 'two'
+module.exports = two
   ? define(routes, config, (app, apply) => {
     apply(app)
   })

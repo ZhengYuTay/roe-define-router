@@ -2,6 +2,7 @@
 /lib
 .next
 dest
+test/fixtures-*
 
 # Numerous always-ignore extensions
 *.bak
